@@ -30,12 +30,12 @@ jobs:
         run: pip install pygbag
 
       - name: Build WASM web bundle
-        run: python -m pygbag --build zombie-game/zombie-game
+        run: python -m pygbag --build zombie-game
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: zombie-game/zombie-game/build/web
+          path: zombie-game/build/web
 
   deploy:
     needs: build
